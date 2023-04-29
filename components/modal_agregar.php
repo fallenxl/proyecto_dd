@@ -10,7 +10,7 @@
                 </div>
                 <div class='flex flex-col w-full items-center'>
                     <div class="w-full">
-                        <form method="POST" action=""  >
+                        <form method="POST" action="index.php"  >
                             <?php
                             include_once 'controllers/add_controller.php'
                             ?>

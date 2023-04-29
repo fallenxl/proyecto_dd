@@ -31,7 +31,7 @@ class Advertisement {
     }
     public function getAdvertisementsById($id){
         try{
-            $query = "SELECT * FROM advertisement WHERE id = :id";
+            $query = "SELECT a.title, a.description, a.price, u.email, u.username, a.category_id FROM advertisement as a INNER JOIN users as u ON a.user_id = u.id WHERE a.id = :id";
             $stmt = $this->connection->prepare($query);
             $stmt->bindParam(':id', $id);
             $stmt->execute();
@@ -54,9 +54,8 @@ class Advertisement {
             $stmt->bindParam(':price', $price);
             $stmt->bindParam(':category_id', $categoryId);
             $stmt->execute();
-            $advertisement = $stmt->fetch(PDO::FETCH_ASSOC);
+           header('Location: index.php?category=all');
 
-            return $advertisement;
 
         }catch(PDOException $e){
             echo "Error: " . $e->getMessage();

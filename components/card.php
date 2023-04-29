@@ -16,7 +16,7 @@ function renderCard($anuncio)
     <span class="text-gray-600 font-bold text-lg mb-4">L.' . $anuncio['price'] . '</span>
     <p class="text-gray-400 text-base mb-4">' . $category_name . '</p>
     <div class="flex justify-end">
-        <a href="anuncio?id='.$anuncio['id'].'" class="text-gray-500 font-bold hover:text-gray-700">Ver más</a>
+        <a href="anuncio.php?id='.$anuncio['id'].'" class="text-gray-500 font-bold hover:text-gray-700">Ver más</a>
     </div>
     </div>';
     } catch (PDOException $e) {
