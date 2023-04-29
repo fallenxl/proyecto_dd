@@ -9,6 +9,6 @@ $connection = $database->getConnection();
 if(isset($_POST['btnagregar'])){
     if(!empty($_POST['title'] && !empty($_POST['description']) && !empty($_POST['price']) && !empty($_POST['category']))){
         $advertisement = new Advertisement($connection);
-        $advertisement->createNewAdvertisement($_SESSION['user_id'], $_POST['title'], $_POST['description'], $_POST['price'], $_POST['category']);
+        $advertisement->createNewAdvertisement($_SESSION['user_id'], $_POST['title'], $_POST['description'], $_POST['price'], intval($_POST['category']));
     }
 }

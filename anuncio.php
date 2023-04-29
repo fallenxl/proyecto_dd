@@ -29,12 +29,22 @@ $category_name = $category->getCategoryNameById($anuncio['category_id']);
                 <h3 class="text-sm font-bold">Precio</h3>
                 <p class="text-2xl">L.<?php echo $anuncio['price'] ?></p>
             </div>
-            <div class="flex flex-col w-full gap-2 ">
+            <div class="flex flex-col w-full gap-2 mb-4">
                 <h3 class="text-sm font-bold">Contacto</h3>
                 <p class="text-lg"><?php echo $anuncio['username'] ?></p>
                 <p class="text-lg"><?php echo $anuncio['email'] ?></p>
 
             </div>
+            <?php
+            if (isset($_SESSION['user_id'])) {
+                if ($_SESSION['user_id'] == $anuncio['user_id']) {
+                    echo '<div class="flex  w-full">
+                     <a href="controllers/delete_controller.php?id=' . $anuncio['id'] . '&user='.$anuncio['user_id'].'"
+                      class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Eliminar</a>
+                </div>';
+                }
+            }
+            ?>
 
 
 

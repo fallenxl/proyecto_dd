@@ -12,7 +12,7 @@
 
     echo "
     <h4 class='text-xl font-bold text-black mb-4'>Mi perfil</h4>
-    <div class='flex items-center gap-2 px-2 py-4 border-b mb-4'>
+    <div class='flex flex-col md:flex-row items-center gap-2 px-2 py-4 border-b mb-4'>
             <img src='https://picsum.photos/200' class='rounded-full w-12 h-12 object-cover'>
             <h3 class='text-md font-bold text-black'>
                 $username
